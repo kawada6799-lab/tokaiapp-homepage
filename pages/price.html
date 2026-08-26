@@ -1,6 +1,7 @@
 <!-- ==========================================================================
      price.html — 料金
-     ★要確認: 金額はすべて実データ待ち。docs/要確認リスト.md
+     初期費用 55,000円 / 月額 11,000円（いずれも税込）。
+     ★要確認: この料金にどこまでの機能が含まれるか（下の「含まれるもの」）
      ========================================================================== -->
 <section class="page-head">
   <div class="wrap">
@@ -10,7 +11,7 @@
     <p class="page-head__en">Price</p>
     <h1 class="page-head__title">料金</h1>
     <p class="page-head__lead">
-      規模と課題によって最適な構成は変わります。まずは目安としてご覧ください。
+      プランを分けていません。分かりやすい一本の料金です。
       ご相談・お見積りは無料です。
     </p>
   </div>
@@ -18,90 +19,58 @@
 
 <section class="section">
   <div class="wrap">
-    <div class="plans">
-      <div class="plan" data-reveal>
-        <p class="plan__name">スターター</p>
-        <p class="plan__price">◯<small>万円〜</small></p>
-        <p class="plan__sub">初期費用 / 月額 ◯万円〜</p>
-        <ul class="plan__list">
-          <li>お知らせ配信</li><li>予約受付</li><li>基本サポート</li>
-        </ul>
-        <a class="btn btn--outline plan__btn" href="/contact/">相談する</a>
+    <div class="price-single" data-reveal>
+      <div class="price-single__main">
+        <p class="price-single__name">基本料金</p>
+        <div class="price-single__figures">
+          <div class="price-fig">
+            <p class="price-fig__label">初期費用</p>
+            <p class="price-fig__num">55,000<small>円</small></p>
+            <p class="price-fig__note">税込</p>
+          </div>
+          <div class="price-fig">
+            <p class="price-fig__label">月額</p>
+            <p class="price-fig__num">11,000<small>円</small></p>
+            <p class="price-fig__note">税込</p>
+          </div>
+        </div>
       </div>
-      <div class="plan plan--featured" data-reveal data-reveal-delay="90">
-        <p class="plan__badge">いちばん選ばれています</p>
-        <p class="plan__name">スタンダード</p>
-        <p class="plan__price">◯<small>万円〜</small></p>
-        <p class="plan__sub">初期費用 / 月額 ◯万円〜</p>
-        <ul class="plan__list">
-          <li>スターターの全機能</li><li>WEB問診</li><li>検査説明動画</li><li>訪問サポート</li>
-        </ul>
-        <a class="btn btn--cta plan__btn" href="/contact/">相談する</a>
-      </div>
-      <div class="plan" data-reveal data-reveal-delay="180">
-        <p class="plan__name">オーダーメイド</p>
-        <p class="plan__price plan__price--text">個別<small>見積</small></p>
-        <p class="plan__sub">要件に合わせて設計します</p>
-        <ul class="plan__list">
-          <li>既存システム連携</li><li>専用機能の開発</li><li>DX導入の伴走支援</li>
-        </ul>
-        <a class="btn btn--outline plan__btn" href="/contact/">相談する</a>
+      <div class="price-single__side">
+        <p class="price-single__text">
+          どこまでの機能を使うかは、クリニックの運用に合わせてご相談のうえ決めます。
+          使わない機能の分をお支払いいただくことはありません。
+        </p>
+        <a class="btn btn--cta" href="/contact/">
+          無料で相談する <span class="btn__arrow" aria-hidden="true">→</span>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 横断で機能を比較できる表 -->
+<!-- ★要確認: この基本料金に何が含まれるかが未確定のため、
+     いまは「ご相談のうえ決める」という書き方にしてあります。
+     含まれる機能が決まったら、ここに一覧として書けます -->
+
 <section class="section section--soft">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="label">Comparison</p>
-      <h2 class="sec-title">プランごとの機能</h2>
-    </div>
-    <div class="table-scroll">
-      <table class="ptable">
-        <thead>
-          <tr>
-            <th scope="col">機能</th>
-            <th scope="col">スターター</th>
-            <th scope="col" class="is-featured">スタンダード</th>
-            <th scope="col">オーダーメイド</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">お知らせ配信</th><td>○</td><td class="is-featured">○</td><td>○</td></tr>
-          <tr><th scope="row">予約受付</th><td>○</td><td class="is-featured">○</td><td>○</td></tr>
-          <tr><th scope="row">WEB問診</th><td>—</td><td class="is-featured">○</td><td>○</td></tr>
-          <tr><th scope="row">検査説明動画（ドウイナビ）</th><td>—</td><td class="is-featured">○</td><td>○</td></tr>
-          <tr><th scope="row">訪問サポート</th><td>—</td><td class="is-featured">○</td><td>○</td></tr>
-          <tr><th scope="row">既存システム連携</th><td>—</td><td class="is-featured">—</td><td>○</td></tr>
-          <tr><th scope="row">専用機能の開発</th><td>—</td><td class="is-featured">—</td><td>○</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <!-- ★要確認: この表の内容は設計案の3プランから起こしたもの。
-         実際の提供範囲に合わせて直してください -->
-    <p class="note">※ 構成の組み合わせによって変わります。詳しくはお問い合わせください。</p>
-  </div>
-</section>
-
-<section class="section">
   <div class="wrap wrap--narrow">
     <div class="sec-head">
       <p class="label">Options</p>
-      <h2 class="sec-title">オプション料金</h2>
+      <h2 class="sec-title">別途お見積りするもの</h2>
+      <p class="sec-lead">
+        内容によって手間が大きく変わるため、基本料金とは分けています。
+      </p>
     </div>
-    <!-- ★要確認: 金額 -->
     <dl class="deflist">
-      <div class="deflist__row"><dt>検査説明動画の制作</dt><dd>1検査あたり ◯万円〜（章数によります）</dd></div>
-      <div class="deflist__row"><dt>追加の訪問サポート</dt><dd>1回 ◯円〜</dd></div>
+      <div class="deflist__row"><dt>検査説明動画の制作</dt><dd>個別見積（検査の種類と章数によります）</dd></div>
       <div class="deflist__row"><dt>専用機能の開発</dt><dd>個別見積</dd></div>
+      <div class="deflist__row"><dt>既存システムとの連携</dt><dd>個別見積</dd></div>
       <div class="deflist__row"><dt>IT機器の選定・設置</dt><dd>個別見積</dd></div>
     </dl>
   </div>
 </section>
 
-<section class="section section--pale">
+<section class="section">
   <div class="wrap wrap--narrow">
     <div class="sec-head">
       <p class="label">Our Thinking</p>
@@ -117,24 +86,33 @@
         開発は自社で行っています。下請けに出さないぶん、
         仕様変更の反映が速く、費用も抑えられます。
       </p>
+      <p>
+        プランを分けていないのは、「上位プランでないと使えない」という形にすると、
+        本当に必要な機能を選びにくくなるからです。
+        必要なものを、必要な分だけご相談ください。
+      </p>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section section--pale">
   <div class="wrap">
     <div class="sec-head sec-head--center">
       <p class="label">FAQ</p>
       <h2 class="sec-title">料金についてのご質問</h2>
     </div>
-    <!-- ★要確認: 契約期間・解約条件・初期費用の実際の条件 -->
+    <!-- ★要確認: 契約期間・解約条件の実際の取り決め -->
     <div class="faq">
+      <details class="faq__item" data-reveal>
+        <summary class="faq__q">表示されている料金は税込ですか？</summary>
+        <div class="faq__a">はい。初期費用 55,000円・月額 11,000円は、いずれも税込の金額です。</div>
+      </details>
       <details class="faq__item" data-reveal>
         <summary class="faq__q">最低契約期間はありますか？</summary>
         <div class="faq__a">条件はご相談のうえ決めています。詳しくはお問い合わせください。</div>
       </details>
       <details class="faq__item" data-reveal>
-        <summary class="faq__q">途中でプランを変更できますか？</summary>
+        <summary class="faq__q">あとから機能を足せますか？</summary>
         <div class="faq__a">できます。使ってみて必要になった機能を、あとから足す形が多いです。</div>
       </details>
       <details class="faq__item" data-reveal>

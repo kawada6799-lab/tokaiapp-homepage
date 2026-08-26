@@ -5,17 +5,16 @@
 
 ```
 tokaiapp-homepage/
-├── pages/                ★ 各ページの中身（10ファイル）
+├── pages/                ★ 各ページの中身（9ファイル）
 │   ├── home.html                ホーム
 │   ├── service-douinavi.html    サービス詳細：ドウイナビ
 │   ├── service-clinic-app.html  サービス詳細：クリニック専用アプリ
 │   ├── service-medical-dx.html  サービス詳細：医療DX導入支援
 │   ├── price.html               料金
-│   ├── case.html                導入事例 一覧
-│   ├── case-sample.html         導入事例 個別（ひな型）
 │   ├── company.html             会社概要
 │   ├── contact.html             お問い合わせ
-│   └── news.html                お知らせ 一覧
+│   ├── news.html                お知らせ 一覧
+│   └── privacy.html             プライバシーポリシー（下書き）
 ├── parts/                ★ 全ページ共通の部品
 │   ├── header.html              ヘッダー
 │   ├── cta.html                 CTA帯
@@ -40,7 +39,7 @@ tokaiapp-homepage/
 node build.mjs
 ```
 
-`preview/` に10ページ書き出されるので、`preview/index.html` をブラウザで開く。
+`preview/` に9ページ書き出されるので、`preview/index.html` をブラウザで開く。
 サーバーは要りません。
 
 ## WordPressに反映する

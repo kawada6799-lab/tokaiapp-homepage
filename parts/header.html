@@ -1,25 +1,25 @@
 <!-- ==========================================================================
      header.html — 全ページ共通のヘッダー
-     電話番号と「無料で相談する」を常時出しておく。スクロールすると
-     上段（電話・受付時間）が畳まれて、1段になって付いてくる。
-     ★要確認: 電話番号と受付時間は仮の値。docs/要確認リスト.md 参照
+     「無料で相談する」を常時出しておく。スクロールすると
+     上段（屋号の説明・連絡先）が畳まれて、1段になって付いてくる。
+     ★要確認: メールアドレス（info@tokaiapp.com が実在するか未確認）
      ========================================================================== -->
 <a class="skip-link" href="#main">本文へ移動</a>
 
 <header class="header" data-header>
 
-  <!-- 上段: 会社の連絡先 -->
+  <!-- 上段: 何をしている屋号かと、連絡先 -->
   <div class="header__top">
     <div class="wrap header__top-in">
       <p class="header__tagline">名古屋のクリニックのための 医療DX</p>
       <p class="header__contact">
-        <a href="tel:0520000000" class="header__tel">
+        <a href="mailto:info@tokaiapp.com" class="header__mail">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/>
+            <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/>
+            <path d="m3 6.5 9 6.5 9-6.5"/>
           </svg>
-          052-000-0000
+          info@tokaiapp.com
         </a>
-        <span class="header__hours">平日 9:00–18:00</span>
       </p>
     </div>
   </div>
@@ -53,7 +53,6 @@
         <ul class="nav__list">
           <li><a class="nav__link" href="/#service">サービス</a></li>
           <li><a class="nav__link" href="/price/">料金</a></li>
-          <li><a class="nav__link" href="/case/">導入事例</a></li>
           <li><a class="nav__link" href="/company/">会社概要</a></li>
           <li><a class="nav__link" href="/news/">お知らせ</a></li>
           <li class="nav__cta-wrap">
