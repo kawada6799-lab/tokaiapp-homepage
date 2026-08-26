@@ -30,7 +30,8 @@
 | 会社概要 | `company` | なし | `pages/company.html` |
 | お問い合わせ | `contact` | なし | `pages/contact.html` |
 | お知らせ | `news` | なし | `pages/news.html` |
-| サービス | `service` | なし | （親の箱。中身は無くてよい） |
+| プライバシーポリシー | `privacy` | なし | `pages/privacy.html` |
+| サービス | `service` | なし | `pages/service.html` |
 | ドウイナビ | `douinavi` | サービス | `pages/service-douinavi.html` |
 | クリニック専用アプリ | `clinic-app` | サービス | `pages/service-clinic-app.html` |
 | 医療DX導入支援 | `medical-dx` | サービス | `pages/service-medical-dx.html` |

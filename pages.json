@@ -7,6 +7,13 @@
     "desc": "クリニック専用アプリ・医療DX導入支援・検査説明システム「ドウイナビ」。負担の大きい業務から小さく始める医療DXを、名古屋から直接支援します。"
   },
   {
+    "slug": "service",
+    "url": "/service/",
+    "out": "service.html",
+    "title": "サービス｜東海App",
+    "desc": "クリニック専用アプリ・医療DX導入支援・ドウイナビ。クリニックの「伝える・つながる・支える」を更新する3つのサービス。"
+  },
+  {
     "slug": "service-douinavi",
     "url": "/service/douinavi/",
     "out": "service-douinavi.html",

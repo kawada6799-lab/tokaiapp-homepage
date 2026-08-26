@@ -5,8 +5,9 @@
 
 ```
 tokaiapp-homepage/
-├── pages/                ★ 各ページの中身（9ファイル）
+├── pages/                ★ 各ページの中身（10ファイル）
 │   ├── home.html                ホーム
+│   ├── service.html             サービス一覧
 │   ├── service-douinavi.html    サービス詳細：ドウイナビ
 │   ├── service-clinic-app.html  サービス詳細：クリニック専用アプリ
 │   ├── service-medical-dx.html  サービス詳細：医療DX導入支援
@@ -39,7 +40,7 @@ tokaiapp-homepage/
 node build.mjs
 ```
 
-`preview/` に9ページ書き出されるので、`preview/index.html` をブラウザで開く。
+`preview/` に10ページ書き出されるので、`preview/index.html` をブラウザで開く。
 サーバーは要りません。
 
 ## WordPressに反映する
