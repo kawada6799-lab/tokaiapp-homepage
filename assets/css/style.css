@@ -327,8 +327,12 @@ h1, h2, h3, .hero__title, .sec-title, .cta-band__title, .page-head__title {
 .stat__num small { font-size: .46em; font-weight: 600; margin-left: 3px; }
 .stat__label { margin-top: var(--sp-2); font-size: var(--fs-mini); color: var(--ink-2); }
 
-/* 直後のセクションに、重なった分の余白を足す */
+/* 直後のセクションに、重なった分の余白を足す。
+   スマホでは数値実績が2段になり、はみ出す高さが増えるので多めに取る */
 .hero + .section { padding-top: calc(var(--sp-section) + 60px); }
+@media (max-width: 720px) {
+  .hero + .section { padding-top: calc(var(--sp-section) + 130px); }
+}
 
 /* --- 7. 課題提起 --------------------------------------------------------- */
 .issues {
