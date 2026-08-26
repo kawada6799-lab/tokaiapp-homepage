@@ -16,6 +16,12 @@ if (!defined('ABSPATH')) { exit; }
 
 define('TOKAIAPP_VERSION', '1.0.0');
 
+/* 0. 国外からのアクセス制限 ---------------------------------------------
+   詳しくは inc/geo-guard.php の冒頭と
+   docs/セキュリティ_国外アクセス制限.md を参照。
+   国コードのヘッダが届かない環境では何もしません（締め出し防止）。 */
+require_once get_template_directory() . '/inc/geo-guard.php';
+
 /* 1. テーマの宣言 ------------------------------------------------------- */
 add_action('after_setup_theme', function () {
     add_theme_support('title-tag');
