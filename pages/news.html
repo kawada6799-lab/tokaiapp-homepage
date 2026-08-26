@@ -1,0 +1,44 @@
+<!-- ==========================================================================
+     news.html — お知らせ 一覧
+     WordPress に載せたあとは、この一覧を投稿から自動で出す形にもできます
+     （wordpress/tokaiapp/ の index.php を使う）。
+     ★要確認: 記事は設計案のサンプル。実際の記事に差し替えてください
+     ========================================================================== -->
+<section class="page-head">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="現在位置">
+      <a href="/">ホーム</a><span>›</span><span aria-current="page">お知らせ</span>
+    </nav>
+    <p class="page-head__en">News</p>
+    <h1 class="page-head__title">お知らせ</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap wrap--narrow">
+    <div class="filter">
+      <a class="filter__item is-on" href="#">すべて</a>
+      <a class="filter__item" href="#">お知らせ</a>
+      <a class="filter__item" href="#">導入事例</a>
+      <a class="filter__item" href="#">コラム</a>
+    </div>
+
+    <ul class="news">
+      <li class="news__item"><a href="#">
+        <time class="news__date" datetime="2026-08-20">2026.08.20</time>
+        <span class="news__cat">お知らせ</span>
+        <span class="news__title">ドウイナビに理解度クイズの新機能を追加しました</span>
+      </a></li>
+      <li class="news__item"><a href="/case/sample/">
+        <time class="news__date" datetime="2026-07-02">2026.07.02</time>
+        <span class="news__cat news__cat--case">導入事例</span>
+        <span class="news__title">◯◯クリニック様の導入事例を公開しました</span>
+      </a></li>
+      <li class="news__item"><a href="#">
+        <time class="news__date" datetime="2026-06-15">2026.06.15</time>
+        <span class="news__cat news__cat--column">コラム</span>
+        <span class="news__title">クリニックのDX、最初に手を付けるべき業務はどこか</span>
+      </a></li>
+    </ul>
+  </div>
+</section>

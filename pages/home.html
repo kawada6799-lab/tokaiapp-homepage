@@ -1,0 +1,338 @@
+<!-- ==========================================================================
+     home.html — ホーム（tokaiapp.com/）
+     並び順の意図: 課題に気づく → サービスを知る → 信頼する → 費用感を掴む → 動く
+     B2Bでは「費用が分からない」が最大の離脱要因なので、
+     料金の目安をホームの時点で見せる。
+     ★要確認 と書いてある値は実データ待ち（docs/要確認リスト.md）
+     ========================================================================== -->
+
+<!-- ===== 02 ファーストビュー ===== -->
+<section class="hero">
+  <div class="wrap hero__in">
+    <div class="hero__body">
+      <p class="label label--on-dark">Medical &times; Technology</p>
+      <h1 class="hero__title">
+        医療現場に、<br>
+        ちょうどいい<br class="only-sp">テクノロジーを。
+      </h1>
+      <p class="hero__lead">
+        大がかりなシステム刷新は要りません。負担の大きい業務から順に、
+        クリニックの規模に合わせて小さく始める医療DXを、名古屋から直接支援します。
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--cta" href="/contact/">
+          無料で相談する <span class="btn__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="btn btn--outline-light" href="/contact/#download">資料をダウンロード</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 数値実績。★要確認: ◯ は実データ待ち -->
+  <div class="wrap">
+    <ul class="stats">
+      <li class="stat">
+        <p class="stat__num">◯<small>院</small></p>
+        <p class="stat__label">導入クリニック数</p>
+      </li>
+      <li class="stat">
+        <p class="stat__num">◯<small>週間</small></p>
+        <p class="stat__label">最短導入期間</p>
+      </li>
+      <li class="stat">
+        <p class="stat__num">◯<small>%</small></p>
+        <p class="stat__label">説明業務の削減率</p>
+      </li>
+      <li class="stat">
+        <p class="stat__num">3<small>領域</small></p>
+        <p class="stat__label">アプリ / DX / 検査説明</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 03 課題提起 ===== -->
+<section class="section section--soft">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label">Issues</p>
+      <h2 class="sec-title">こんな負担、毎日続いていませんか</h2>
+    </div>
+
+    <ul class="issues">
+      <li class="issue" data-reveal>
+        <p class="issue__no">01</p>
+        <h3 class="issue__title">同じ検査説明を<br>一日に何度も繰り返す</h3>
+        <p class="issue__text">
+          説明の質が担当者によってばらつき、外来が押す原因にもなる。
+        </p>
+      </li>
+      <li class="issue" data-reveal data-reveal-delay="90">
+        <p class="issue__no">02</p>
+        <h3 class="issue__title">予約・問診の電話対応で<br>受付が手一杯</h3>
+        <p class="issue__text">
+          本来の業務に時間を割けず、患者さんの待ち時間も伸びていく。
+        </p>
+      </li>
+      <li class="issue" data-reveal data-reveal-delay="180">
+        <p class="issue__no">03</p>
+        <h3 class="issue__title">DXを勧められるが<br>何から手を付けるか不明</h3>
+        <p class="issue__text">
+          大規模な提案ばかりで、クリニックの規模に合う選択肢がない。
+        </p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 04 3つのサービス ===== -->
+<section class="section" id="service">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label">Services</p>
+      <h2 class="sec-title">
+        3つのサービスで、クリニックの<br class="only-pc">「伝える・つながる・支える」を更新します
+      </h2>
+    </div>
+
+    <div class="services">
+
+      <article class="svc svc--app" data-reveal>
+        <p class="svc__en">Clinic App</p>
+        <h3 class="svc__title">クリニック専用アプリ</h3>
+        <p class="svc__text">
+          予約・お知らせ・問診・患者さんとの連絡をひとつのアプリに。
+          ローコード開発で短期間・低コストに導入できます。
+        </p>
+        <a class="svc__more" href="/service/clinic-app/">
+          詳しく見る <span aria-hidden="true">→</span>
+        </a>
+      </article>
+
+      <article class="svc svc--dx" data-reveal data-reveal-delay="90">
+        <p class="svc__en">Medical DX</p>
+        <h3 class="svc__title">医療DX導入支援</h3>
+        <p class="svc__text">
+          負担の大きい業務から段階的にデジタル化。クラウド活用とIT機器の
+          選定・導入までまとめて引き受けます。
+        </p>
+        <a class="svc__more" href="/service/medical-dx/">
+          詳しく見る <span aria-hidden="true">→</span>
+        </a>
+      </article>
+
+      <article class="svc svc--douinavi" data-reveal data-reveal-delay="180">
+        <p class="svc__en">Douinavi</p>
+        <h3 class="svc__title">ドウイナビ（検査説明DX）</h3>
+        <p class="svc__text">
+          動画で説明し、理解度を確認し、注意事項の申告まで受け取る。
+          検査説明を「伝える」から「伝わる」へ変えます。
+        </p>
+        <a class="svc__more" href="/service/douinavi/">
+          詳しく見る <span aria-hidden="true">→</span>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 05 選ばれる理由 ===== -->
+<section class="section section--pale">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label">Why Us</p>
+      <h2 class="sec-title">東海Appが選ばれる理由</h2>
+    </div>
+
+    <ul class="reasons">
+      <li class="reason" data-reveal>
+        <p class="reason__no">Reason 01</p>
+        <h3 class="reason__title">クリニックに特化</h3>
+        <p class="reason__text">大病院向けの縮小版ではなく、外来を回す現場のために設計しています。</p>
+      </li>
+      <li class="reason" data-reveal data-reveal-delay="70">
+        <p class="reason__no">Reason 02</p>
+        <h3 class="reason__title">自社で開発している</h3>
+        <p class="reason__text">下請けに投げません。仕様変更も直接、速く反映できます。</p>
+      </li>
+      <li class="reason" data-reveal data-reveal-delay="140">
+        <p class="reason__no">Reason 03</p>
+        <h3 class="reason__title">名古屋から直接支援</h3>
+        <p class="reason__text">導入後も顔の見える距離で。訪問しての相談にも対応します。</p>
+      </li>
+      <li class="reason" data-reveal data-reveal-delay="210">
+        <p class="reason__no">Reason 04</p>
+        <h3 class="reason__title">小さく始められる</h3>
+        <p class="reason__text">一度に全部やりません。効果の大きい業務ひとつから着手します。</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 06 導入事例 ===== -->
+<!-- ★要確認: 医院名・数値ともに実データ待ち。掲載には先方の許諾が必要 -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label">Case Studies</p>
+      <h2 class="sec-title">導入事例</h2>
+      <p class="sec-lead">
+        実際に導入いただいたクリニック様の、導入前の課題と導入後の変化をご紹介します。
+      </p>
+    </div>
+
+    <div class="cases">
+
+      <a class="case" href="/case/" data-reveal>
+        <span class="case__photo" aria-hidden="true">CASE PHOTO</span>
+        <span class="case__tag case__tag--douinavi">ドウイナビ</span>
+        <span class="case__clinic">◯◯クリニック様</span>
+        <span class="case__title">内視鏡検査の説明を動画化</span>
+        <span class="case__metric"><b>◯◯%</b> 説明にかかる時間を削減</span>
+      </a>
+
+      <a class="case" href="/case/" data-reveal data-reveal-delay="90">
+        <span class="case__photo" aria-hidden="true">CASE PHOTO</span>
+        <span class="case__tag case__tag--app">クリニックアプリ</span>
+        <span class="case__clinic">◯◯医院様</span>
+        <span class="case__title">予約・問診をアプリに集約</span>
+        <span class="case__metric"><b>◯◯件</b> 受付の電話対応が月あたり減少</span>
+      </a>
+
+      <a class="case" href="/case/" data-reveal data-reveal-delay="180">
+        <span class="case__photo" aria-hidden="true">CASE PHOTO</span>
+        <span class="case__tag case__tag--dx">医療DX支援</span>
+        <span class="case__clinic">◯◯こどもクリニック様</span>
+        <span class="case__title">紙の書類をクラウド化</span>
+        <span class="case__metric"><b>◯◯時間</b> 月あたりの事務作業を短縮</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 07 料金の目安 ===== -->
+<!-- ★要確認: 3プランの初期費用・月額 -->
+<section class="section section--soft">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label">Price</p>
+      <h2 class="sec-title">料金の目安</h2>
+      <p class="sec-lead">
+        規模と課題によって最適な構成は変わります。まずは目安としてご覧ください。
+      </p>
+    </div>
+
+    <div class="plans">
+
+      <div class="plan" data-reveal>
+        <p class="plan__name">スターター</p>
+        <p class="plan__price">◯<small>万円〜</small></p>
+        <p class="plan__sub">初期費用 / 月額 ◯万円〜</p>
+        <ul class="plan__list">
+          <li>お知らせ配信</li>
+          <li>予約受付</li>
+          <li>基本サポート</li>
+        </ul>
+        <a class="btn btn--outline plan__btn" href="/price/">詳しく見る</a>
+      </div>
+
+      <div class="plan plan--featured" data-reveal data-reveal-delay="90">
+        <p class="plan__badge">いちばん選ばれています</p>
+        <p class="plan__name">スタンダード</p>
+        <p class="plan__price">◯<small>万円〜</small></p>
+        <p class="plan__sub">初期費用 / 月額 ◯万円〜</p>
+        <ul class="plan__list">
+          <li>スターターの全機能</li>
+          <li>WEB問診</li>
+          <li>検査説明動画</li>
+          <li>訪問サポート</li>
+        </ul>
+        <a class="btn btn--cta plan__btn" href="/price/">詳しく見る</a>
+      </div>
+
+      <div class="plan" data-reveal data-reveal-delay="180">
+        <p class="plan__name">オーダーメイド</p>
+        <p class="plan__price plan__price--text">個別<small>見積</small></p>
+        <p class="plan__sub">要件に合わせて設計します</p>
+        <ul class="plan__list">
+          <li>既存システム連携</li>
+          <li>専用機能の開発</li>
+          <li>DX導入の伴走支援</li>
+        </ul>
+        <a class="btn btn--outline plan__btn" href="/contact/">相談する</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 08 導入までの流れ ===== -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label">Flow</p>
+      <h2 class="sec-title">導入までの流れ</h2>
+    </div>
+
+    <ol class="flow">
+      <li class="step" data-reveal>
+        <p class="step__no">Step 01</p>
+        <h3 class="step__title">お問い合わせ</h3>
+        <p class="step__text">フォームまたはお電話から。相談は無料です。</p>
+      </li>
+      <li class="step" data-reveal data-reveal-delay="70">
+        <p class="step__no">Step 02</p>
+        <h3 class="step__title">ヒアリング</h3>
+        <p class="step__text">現在の業務と課題を伺い、優先順位を整理します。</p>
+      </li>
+      <li class="step" data-reveal data-reveal-delay="140">
+        <p class="step__no">Step 03</p>
+        <h3 class="step__title">ご提案・お見積</h3>
+        <p class="step__text">規模に合った構成と費用をご提示します。</p>
+      </li>
+      <li class="step" data-reveal data-reveal-delay="210">
+        <p class="step__no">Step 04</p>
+        <h3 class="step__title">導入・運用開始</h3>
+        <p class="step__text">最短◯週間で稼働。導入後も継続して支援します。</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== 09 お知らせ ===== -->
+<!-- ★要確認: 実際の記事に差し替える。WordPressの投稿から出す形にもできる -->
+<section class="section section--soft">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label">News</p>
+      <h2 class="sec-title">お知らせ</h2>
+      <a class="sec-more" href="/news/">すべて見る <span aria-hidden="true">→</span></a>
+    </div>
+
+    <ul class="news">
+      <li class="news__item">
+        <a href="/news/">
+          <time class="news__date" datetime="2026-08-20">2026.08.20</time>
+          <span class="news__cat">お知らせ</span>
+          <span class="news__title">ドウイナビに理解度クイズの新機能を追加しました</span>
+        </a>
+      </li>
+      <li class="news__item">
+        <a href="/news/">
+          <time class="news__date" datetime="2026-07-02">2026.07.02</time>
+          <span class="news__cat news__cat--case">導入事例</span>
+          <span class="news__title">◯◯クリニック様の導入事例を公開しました</span>
+        </a>
+      </li>
+      <li class="news__item">
+        <a href="/news/">
+          <time class="news__date" datetime="2026-06-15">2026.06.15</time>
+          <span class="news__cat news__cat--column">コラム</span>
+          <span class="news__title">クリニックのDX、最初に手を付けるべき業務はどこか</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

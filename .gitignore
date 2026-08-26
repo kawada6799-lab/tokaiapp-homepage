@@ -1,0 +1,9 @@
+# build.mjs が作るプレビュー（parts/ と pages/ から毎回組み立て直せる）
+preview/
+
+# pack-theme.mjs が作る組み立て結果
+build/
+
+# OS が勝手に作るもの
+.DS_Store
+Thumbs.db

@@ -1,0 +1,106 @@
+<!-- ==========================================================================
+     contact.html — お問い合わせ
+     電話とメールをフォームより先に置く（設計図 05）。
+     フォームは WordPress の Contact Form 7 に差し替える前提のひな型。
+     差し替え方は docs/WordPress反映手順.md
+     ========================================================================== -->
+<section class="page-head">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="現在位置">
+      <a href="/">ホーム</a><span>›</span><span aria-current="page">お問い合わせ</span>
+    </nav>
+    <p class="page-head__en">Contact</p>
+    <h1 class="page-head__title">お問い合わせ</h1>
+    <p class="page-head__lead">
+      導入の可否に関わらず、現場の課題整理からお手伝いします。ご相談・お見積りは無料です。
+    </p>
+  </div>
+</section>
+
+<!-- 電話・メールを先に -->
+<section class="section">
+  <div class="wrap">
+    <div class="contact-direct">
+      <!-- ★要確認: 電話番号・受付時間 -->
+      <a class="contact-card" href="tel:0520000000">
+        <span class="contact-card__label">お電話</span>
+        <span class="contact-card__value">052-000-0000</span>
+        <span class="contact-card__note">平日 9:00–18:00</span>
+      </a>
+      <!-- ★要確認: メールアドレス -->
+      <a class="contact-card" href="mailto:info@tokaiapp.com">
+        <span class="contact-card__label">メール</span>
+        <span class="contact-card__value">info@tokaiapp.com</span>
+        <span class="contact-card__note">◯営業日以内にご返信します</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="wrap wrap--narrow">
+    <div class="sec-head">
+      <p class="label">Form</p>
+      <h2 class="sec-title">フォームからのご相談</h2>
+    </div>
+
+    <!--
+      ★WordPress へ載せるときは、この <form> ごと Contact Form 7 の
+        ショートコードに置き換えてください。
+        入力欄は横並びにしない（1カラム）。医療機関の担当者は年齢層が高めのため、
+        タップ領域を大きく取っています。
+    -->
+    <form class="form" action="#" method="post">
+      <div class="form__row">
+        <label class="form__label" for="f-clinic">医院名 <span class="req">必須</span></label>
+        <input class="form__input" id="f-clinic" name="clinic" type="text" required>
+      </div>
+      <div class="form__row">
+        <label class="form__label" for="f-name">お名前 <span class="req">必須</span></label>
+        <input class="form__input" id="f-name" name="name" type="text" required autocomplete="name">
+      </div>
+      <div class="form__row">
+        <label class="form__label" for="f-email">メールアドレス <span class="req">必須</span></label>
+        <input class="form__input" id="f-email" name="email" type="email" required autocomplete="email">
+      </div>
+      <div class="form__row">
+        <label class="form__label" for="f-tel">電話番号</label>
+        <input class="form__input" id="f-tel" name="tel" type="tel" autocomplete="tel">
+      </div>
+      <div class="form__row">
+        <label class="form__label" for="f-topic">ご相談の内容</label>
+        <select class="form__input" id="f-topic" name="topic">
+          <option>どれから始めるか相談したい</option>
+          <option>クリニック専用アプリ</option>
+          <option>医療DX導入支援</option>
+          <option>ドウイナビ（検査説明DX）</option>
+          <option>資料がほしい</option>
+          <option>その他</option>
+        </select>
+      </div>
+      <div class="form__row">
+        <label class="form__label" for="f-body">お問い合わせ内容</label>
+        <textarea class="form__input form__input--area" id="f-body" name="body" rows="6"></textarea>
+      </div>
+
+      <label class="form__check">
+        <input type="checkbox" name="agree" required>
+        <span><a href="/privacy/">プライバシーポリシー</a>に同意します</span>
+      </label>
+
+      <button class="btn btn--cta form__submit" type="submit">
+        この内容で送信する <span class="btn__arrow" aria-hidden="true">→</span>
+      </button>
+    </form>
+
+    <div class="after-send" id="download">
+      <h3 class="after-send__title">送信後の流れ</h3>
+      <ol class="after-send__list">
+        <li>自動返信メールが届きます（届かない場合は迷惑メールをご確認ください）</li>
+        <li>◯営業日以内に、担当よりご連絡します</li>
+        <li>お困りごとを伺い、必要であれば訪問してご説明します</li>
+      </ol>
+      <p class="note">※ 資料をご希望の方は、上のフォームで「資料がほしい」をお選びください。</p>
+    </div>
+  </div>
+</section>

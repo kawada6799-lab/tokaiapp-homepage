@@ -1,0 +1,30 @@
+/*
+Theme Name: 東海App
+Theme URI: https://tokaiapp.com/
+Author: 東海App
+Description: 東海App コーポレートサイトのテーマ。ページの中身は親フォルダの pages/ と parts/ に入っていて、このテーマはそれを読み込んで出力するだけの薄い殻です。デザインを直すときは pages/ ・ parts/ ・ assets/css/ を編集してください。
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 7.4
+License: 私的利用
+Text Domain: tokaiapp
+*/
+
+/* --------------------------------------------------------------------------
+   このファイルには WordPress 固有の調整だけを書く。
+   サイトの見た目そのものは assets/css/tokens.css と assets/css/style.css。
+   -------------------------------------------------------------------------- */
+
+/* 管理バー（ログイン中に上に出る黒い帯）の分だけ固定ヘッダーを下げる */
+body.admin-bar .header { top: 32px; }
+@media screen and (max-width: 782px) {
+  body.admin-bar .header { top: 46px; }
+}
+
+/* WordPress が自動で入れる余白を打ち消す */
+body { padding-left: 0 !important; padding-right: 0 !important; }
+
+/* 投稿本文に貼られた画像・埋め込みがはみ出さないように */
+.entry img, .entry iframe { max-width: 100%; }
+.entry iframe { aspect-ratio: 16 / 9; height: auto; }
