@@ -55,6 +55,18 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('tokaiapp-main', $uri . '/assets/js/main.js', array(), $ver('assets/js/main.js'), true);
 });
 
+/* 4. 管理画面から pages/ と parts/ を編集できるようにする ----------------
+   WordPress の「テーマファイルエディター」は、既定では php と css しか
+   一覧に出さない。このサイトは中身が .html なので、html も編集できるようにする。
+
+   ★注意★ ここで直した内容は、次に zip を上書きアップロードすると消えます。
+   直したら、リポジトリ側（pages/ ・ parts/）にも同じ変更を入れてください。
+   詳しくは docs/文言の直し方.md */
+add_filter('wp_theme_editor_filetypes', function ($types) {
+    if (!in_array('html', $types, true)) { $types[] = 'html'; }
+    return $types;
+});
+
 /**
  * テーマフォルダの中のHTMLを、そのまま読んで返す。
  *
