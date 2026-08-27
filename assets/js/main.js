@@ -1,15 +1,36 @@
 /* ==========================================================================
-   main.js — 動きは4つだけ。ライブラリは使っていない。
+   main.js — 動きは5つだけ。ライブラリは使っていない。
      1. スクロールするとヘッダーが縮んで追従する
      2. スマホでメニューを開閉する
      3. セクションが画面に入ったらふわっと出す
      4. スマホの追従CTAを、CTA帯が見えている間だけ隠す
+     5. メールアドレスを組み立てる（迷惑メール対策）
    「動きを減らす」設定の端末では 3 を止める。
    ========================================================================== */
 (function () {
   'use strict';
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* 5. メールアドレスの組み立て --------------------------------------------
+     アドレスをHTMLに直接書くと、収集ボットに拾われて迷惑メールが増える。
+     data-mail（＠より前）と data-mail-domain（＠より後）に分けて置き、
+     ここでつなげて mailto: にする。
+
+     JavaScriptが動かない環境では、リンクはお問い合わせページのままになる。
+     アドレスを変えるときは、HTML側の data-mail / data-mail-domain を直す。 */
+  document.querySelectorAll('[data-mail][data-mail-domain]').forEach(function (el) {
+    var user = el.getAttribute('data-mail');
+    var domain = el.getAttribute('data-mail-domain');
+    if (!user || !domain) return;
+
+    var address = user + String.fromCharCode(64) + domain;
+    el.setAttribute('href', 'mailto:' + address);
+
+    // アドレスを表示する場所があれば、そこに入れる
+    var slot = el.querySelector('[data-mail-text]');
+    if (slot) { slot.textContent = address; }
+  });
 
   /* 1. ヘッダー ---------------------------------------------------------- */
   var header = document.querySelector('[data-header]');

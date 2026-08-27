@@ -12,12 +12,16 @@
     <div class="wrap header__top-in">
       <p class="header__tagline">名古屋のクリニックのための 医療DX</p>
       <p class="header__contact">
-        <a href="mailto:info@tokaiapp.com" class="header__mail">
+        <!-- メールアドレスはHTMLに直接書かない（収集ボット対策）。
+             main.js が data- 属性から組み立てて mailto: にする。
+             JavaScriptが動かない環境では、お問い合わせページへのリンクになる -->
+        <a href="/contact/" class="header__mail"
+           data-mail="info" data-mail-domain="tokaiapp.com">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/>
             <path d="m3 6.5 9 6.5 9-6.5"/>
           </svg>
-          info@tokaiapp.com
+          <span data-mail-text>お問い合わせ</span>
         </a>
       </p>
     </div>
