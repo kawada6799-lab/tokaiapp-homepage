@@ -42,9 +42,17 @@ tokaiapp.com。WordPress で運用する、9ページ構成のコーポレート
 6. **ページ間のリンクは本番URL**（`/price/` など）で書く。
    `build.mjs` がプレビュー用に変換する
 
-7. **`preview/` と `build/` は触らない。** どちらも生成物
+7. **画像の参照は `{{ASSETS}}/img/xxx.png` と書く。** 相対パスで書かないこと。
+   `/service/douinavi/` のような下層ページでずれる。
+   `build.mjs` と `functions.php` の両方が置き換える
 
-8. **国外アクセス制限（`wordpress/tokaiapp/inc/geo-guard.php`）を
+8. **実写素材をこのリポジトリに置かない。** Public なので履歴から消せない。
+   写真は WordPress のメディアにアップロードし、絶対URLで参照する
+   （`docs/画像の入れ方.md`）
+
+9. **`preview/` と `build/` は触らない。** どちらも生成物
+
+10. **国外アクセス制限（`wordpress/tokaiapp/inc/geo-guard.php`）を
    フェイルクローズに変えないこと。** 国コードのヘッダが届かない環境では
    何もしない設計です。「判定できないから止める」にすると、
    設定変更のたびにユーザー自身が締め出されます。

@@ -7,7 +7,16 @@
      ========================================================================== -->
 
 <!-- ===== 02 ファーストビュー ===== -->
+<!--
+  画面いっぱいに出ます（高さ ＝ 画面の高さ）。
+
+  背景に写真を敷きたいときは、下の <section> に style を足すだけです。
+      <section class="hero has-photo" style="--hero-image: url('{{ASSETS}}/img/hero.jpg')">
+  写真の上に濃紺の膜がかかるので、白い文字はそのまま読めます。
+  膜の濃さは --hero-veil（0〜1、既定 0.82）で調整できます。
+-->
 <section class="hero">
+  <div class="hero__media" aria-hidden="true"></div>
   <div class="wrap hero__in">
     <div class="hero__body">
       <p class="label label--on-dark">Medical &times; Technology</p>
@@ -28,6 +37,11 @@
     </div>
   </div>
 
+  <!-- 下に続きがあることを示す -->
+  <a class="hero__scroll" href="#service" aria-label="サービスの紹介へ進む">
+    <span class="hero__scroll-text">SCROLL</span>
+    <span class="hero__scroll-line" aria-hidden="true"></span>
+  </a>
 </section>
 
 <!-- ===== 03 課題提起 ===== -->

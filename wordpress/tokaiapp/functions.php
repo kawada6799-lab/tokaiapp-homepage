@@ -81,7 +81,12 @@ function tokaiapp_html($rel) {
     $path = get_template_directory() . '/' . $rel;
     if (!is_readable($path)) { return ''; }
     $html = file_get_contents($path);
-    return $html === false ? '' : $html;
+    if ($html === false) { return ''; }
+
+    // 画像などの参照は {{ASSETS}}/img/xxx.png と書いてある。
+    // 下層ページ（/service/douinavi/ など）で相対パスがずれないよう、
+    // ここでテーマのURLに置き換える。
+    return str_replace('{{ASSETS}}', get_template_directory_uri() . '/assets', $html);
 }
 
 /**

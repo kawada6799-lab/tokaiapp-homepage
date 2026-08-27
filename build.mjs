@@ -32,6 +32,18 @@ const urlMap = new Map(PAGES.map((p) => [p.url, p.out]));
  * href="/price/" のような本番URLを、preview 用の相対パスに書き換える。
  * ページ内アンカー（/#service）や tel: はそのまま扱う。
  */
+/**
+ * 画像などの参照は {{ASSETS}}/img/xxx.png と書いておく。
+ * preview では assets/img/xxx.png に、
+ * WordPress ではテーマのURLに置き換わる（functions.php の tokaiapp_html）。
+ *
+ * こう書いておかないと、/service/douinavi/ のような下層ページで
+ * 相対パスがずれて画像が出なくなる。
+ */
+function resolveAssets(html) {
+  return html.replaceAll('{{ASSETS}}', 'assets');
+}
+
 function localizeLinks(html) {
   return html.replace(/href="(\/[^"]*)"/g, (whole, url) => {
     const [pathPart, hash] = url.split('#');
@@ -81,9 +93,9 @@ for (const page of PAGES) {
   if (!existsSync(src)) { missing.push(page.slug); continue; }
 
   const body = await readFile(src, 'utf8');
-  const html = localizeLinks(
+  const html = resolveAssets(localizeLinks(
     shell(page, `${header}\n<main id="main">\n${body}\n</main>\n${cta}\n${footer}`)
-  );
+  ));
   await writeFile(path.join(out, page.out), html);
   made++;
 }

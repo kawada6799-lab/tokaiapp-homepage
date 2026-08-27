@@ -21,6 +21,7 @@ tokaiapp-homepage/
 │   ├── cta.html                 CTA帯
 │   └── footer.html              フッター＋スマホの追従CTA
 ├── assets/
+│   ├── img/logo.png      ロゴ（透過PNG。濃い背景では自動で白抜きになる）
 │   ├── css/tokens.css    ★ 色・余白・文字サイズ。見た目の調整はまずここ
 │   ├── css/style.css        レイアウトと部品
 │   └── js/main.js           ヘッダー・メニュー・スクロール表示（ライブラリなし）
@@ -30,6 +31,7 @@ tokaiapp-homepage/
 ├── pages.json            ページの一覧（URL・タイトル・説明文）
 └── docs/
     ├── 文言の直し方.md        ★ 「ここを1行変えたい」ときはこれ
+    ├── 画像の入れ方.md        ★ 写真・フリー素材の扱い
     ├── 要確認リスト.md        ★ 公開前に埋める項目
     ├── デザイン方針.md         配色と組み方の決めごと
     ├── WordPress反映手順.md    本番への反映手順

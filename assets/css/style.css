@@ -200,8 +200,14 @@ h1, h2, h3, .hero__title, .sec-title, .cta-band__title, .page-head__title {
 }
 .header.is-stuck .header__main-in { height: 62px; }
 
-.logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-.logo__mark { width: 34px; height: 34px; border-radius: 8px; }
+.logo { display: flex; align-items: center; gap: 11px; flex-shrink: 0; }
+/* ロゴは横長（およそ 1.58 : 1）。高さを基準に合わせる */
+.logo__mark { width: auto; height: 30px; }
+
+/* 濃い背景に置くときは、ロゴを白一色に転換する。
+   濃紺の「T」がそのままだと背景に沈むため。
+   画像を2枚用意せずに済ませている */
+.logo--on-dark .logo__mark { filter: brightness(0) invert(1); }
 .logo__text {
   font-size: 1.05rem; font-weight: 700;
   letter-spacing: .02em; color: var(--navy);
@@ -270,16 +276,37 @@ h1, h2, h3, .hero__title, .sec-title, .cta-band__title, .page-head__title {
 }
 
 /* --- 5. ファーストビュー -------------------------------------------------- */
+/* 画面いっぱいのファーストビュー。
+   100svh は、スマホでアドレスバーが出入りしても高さが暴れないようにするため
+   （対応していないブラウザでは直前の 100vh が使われる） */
 .hero {
-  position: relative;
-  padding-top: calc(var(--header-h) + clamp(48px, 6vw, 88px));
-  padding-bottom: 0;
+  position: relative; isolation: isolate;
+  display: flex; align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: var(--header-h);
+  padding-bottom: clamp(88px, 12vh, 140px);
   color: #fff;
   background:
     radial-gradient(900px 520px at 78% 8%, rgba(7, 106, 163, .55) 0%, transparent 62%),
     linear-gradient(140deg, var(--navy-900) 0%, var(--navy) 46%, #0a4a80 100%);
 }
-@media (max-width: 760px) { .hero { padding-top: calc(72px + 48px); } }
+@media (max-width: 760px) { .hero { padding-top: 72px; } }
+
+/* 背景に写真を敷く層。--hero-image を渡したときだけ出る */
+.hero__media {
+  position: absolute; inset: 0; z-index: -1;
+  background-image: var(--hero-image, none);
+  background-size: cover; background-position: center;
+}
+/* 写真の上にかける濃紺の膜。これが無いと白い文字が読めなくなる */
+.hero__media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(140deg,
+    rgba(4, 29, 59, var(--hero-veil, .82)),
+    rgba(6, 40, 80, var(--hero-veil, .72)));
+}
+.hero:not(.has-photo) .hero__media { display: none; }
 
 /* ロゴのグラデーションを背景に薄く引き伸ばした斜めの帯 */
 .hero::before {
@@ -288,7 +315,7 @@ h1, h2, h3, .hero__title, .sec-title, .cta-band__title, .page-head__title {
     linear-gradient(115deg, transparent 42%, rgba(255,255,255,.045) 42%, rgba(255,255,255,.045) 55%, transparent 55%),
     linear-gradient(115deg, transparent 62%, rgba(255,255,255,.03) 62%, rgba(255,255,255,.03) 72%, transparent 72%);
 }
-.hero__in { position: relative; padding-bottom: clamp(56px, 6vw, 92px); }
+.hero__in { position: relative; width: 100%; }
 .hero__body { max-width: 46rem; }
 
 .hero__title {
@@ -303,6 +330,36 @@ h1, h2, h3, .hero__title, .sec-title, .cta-band__title, .page-head__title {
   margin-top: var(--sp-7);
   display: flex; flex-wrap: wrap; gap: var(--sp-4);
 }
+
+/* 下に続きがあることを示す縦線。光が流れ落ちる */
+.hero__scroll {
+  position: absolute; left: 50%; bottom: 0; translate: -50% 0;
+  display: grid; justify-items: center; gap: 10px;
+  padding-bottom: 28px; color: rgba(255,255,255,.62);
+  transition: color .2s var(--ease);
+}
+.hero__scroll:hover { color: #fff; }
+.hero__scroll-text {
+  font-family: var(--disp); font-size: .66rem;
+  font-weight: 600; letter-spacing: .28em; text-indent: .28em;
+}
+.hero__scroll-line {
+  position: relative; display: block;
+  width: 1px; height: 54px; overflow: hidden;
+  background: rgba(255,255,255,.22);
+}
+.hero__scroll-line::after {
+  content: ""; position: absolute; inset: 0 0 auto 0;
+  height: 40%; background: #fff;
+  animation: scroll-fall 2.2s var(--ease) infinite;
+}
+@keyframes scroll-fall {
+  0%   { transform: translateY(-100%); }
+  60%  { transform: translateY(250%); }
+  100% { transform: translateY(250%); }
+}
+/* 画面が低いとき（横向きのスマホなど）は邪魔になるので出さない */
+@media (max-height: 620px) { .hero__scroll { display: none; } }
 
 /* --- 7. 課題提起 --------------------------------------------------------- */
 .issues {
