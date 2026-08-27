@@ -28,3 +28,55 @@ body { padding-left: 0 !important; padding-right: 0 !important; }
 /* 投稿本文に貼られた画像・埋め込みがはみ出さないように */
 .entry img, .entry iframe { max-width: 100%; }
 .entry iframe { aspect-ratio: 16 / 9; height: auto; }
+
+/* --------------------------------------------------------------------------
+   Contact Form 7 を入れたときの調整
+
+   CF7 は入力欄を <span class="wpcf7-form-control-wrap"> で包む。
+   この span は既定でインラインなので、そのままだと入力欄が横幅いっぱいに
+   広がらない。ここで block にして、テーマのフォーム見た目に合わせている。
+   -------------------------------------------------------------------------- */
+
+.wpcf7-form-control-wrap { display: block; }
+
+/* CF7 が出す不要な余白を消す */
+.wpcf7 form .wpcf7-response-output { margin: var(--sp-5) 0 0; }
+.wpcf7 p { margin: 0; }
+
+/* 入力に不備があるときの、項目ごとのメッセージ */
+.wpcf7-not-valid-tip {
+  margin-top: 6px;
+  font-size: var(--fs-mini);
+  color: #b3261e;
+}
+.wpcf7-form-control.wpcf7-not-valid {
+  border-color: #b3261e;
+  box-shadow: 0 0 0 3px rgba(179, 38, 30, .12);
+}
+
+/* 送信後にフォーム上部に出る帯 */
+.wpcf7 form .wpcf7-response-output {
+  padding: var(--sp-4) var(--sp-5);
+  border-width: 1px; border-style: solid;
+  border-radius: var(--r-sm);
+  font-size: var(--fs-small);
+}
+.wpcf7 form.sent .wpcf7-response-output {
+  border-color: #17876f; background: #e7f4f0; color: #0f5c4c;
+}
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+.wpcf7 form.payment-required .wpcf7-response-output {
+  border-color: #c2603f; background: var(--orange-050); color: #a94a2b;
+}
+.wpcf7 form.failed .wpcf7-response-output,
+.wpcf7 form.aborted .wpcf7-response-output {
+  border-color: #b3261e; background: #fdecea; color: #8c1d18;
+}
+
+/* 送信中のぐるぐる */
+.wpcf7-spinner { margin: 0 0 0 var(--sp-4); vertical-align: middle; }
+
+/* 同意チェックボックス（[acceptance] タグ） */
+.wpcf7-acceptance .wpcf7-list-item { margin: 0; }
+.wpcf7-acceptance .wpcf7-list-item-label { font-size: var(--fs-small); color: var(--ink-2); }

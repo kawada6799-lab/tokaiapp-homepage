@@ -38,12 +38,20 @@
       <h2 class="sec-title">フォームからのご相談</h2>
     </div>
 
-    <!--
-      ★WordPress へ載せるときは、この <form> ごと Contact Form 7 の
-        ショートコードに置き換えてください。
-        入力欄は横並びにしない（1カラム）。医療機関の担当者は年齢層が高めのため、
-        タップ領域を大きく取っています。
-    -->
+    <!-- ▼▼▼ ここから ▼▼▼ ================================================
+      ★★ このフォームはまだ送信できません（action="#" のため） ★★
+
+      WordPress で動くようにするには、この下の <form> 〜 </form> を丸ごと
+      Contact Form 7 のショートコード1行に置き換えます。
+
+          [contact-form-7 id="123" title="お問い合わせ"]
+
+      貼り付けるフォームの中身（コピペできる完成形）と、メールの設定、
+      迷惑送信対策の入れ方は docs/お問い合わせフォームの設置.md にあります。
+
+      入力欄は横並びにしていません（1カラム）。医療機関のご担当者は
+      年齢層が高めのため、タップ領域を大きく取っています。
+      ============================================================== -->
     <form class="form" action="#" method="post">
       <div class="form__row">
         <label class="form__label" for="f-clinic">医院名 <span class="req">必須</span></label>
@@ -86,6 +94,7 @@
         この内容で送信する <span class="btn__arrow" aria-hidden="true">→</span>
       </button>
     </form>
+    <!-- ▲▲▲ ここまでを置き換える ▲▲▲ -->
 
     <div class="after-send" id="download">
       <h3 class="after-send__title">送信後の流れ</h3>
