@@ -489,6 +489,23 @@ h1, h2, h3, .hero__title, .sec-title, .cta-band__title, .page-head__title {
 }
 .price-single__text { color: var(--ink-2); font-size: var(--fs-small); }
 
+/* 金額を出さないサービスの受け皿。相談へ流す */
+.price-ask {
+  margin-top: var(--sp-5);
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: var(--sp-5) var(--sp-7);
+  padding: var(--sp-7) clamp(24px, 4vw, 48px);
+  background: var(--bg); border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+}
+.price-ask > div { flex: 1 1 22rem; }
+.price-ask__title { font-weight: 700; color: var(--navy); }
+.price-ask__text {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-small); color: var(--ink-2);
+}
+.section--soft .price-ask { background: #fff; }
+
 /* --- 12. 導入の流れ ------------------------------------------------------- */
 .flow {
   position: relative;
@@ -922,6 +939,31 @@ h1, h2, h3, .hero__title, .sec-title, .cta-band__title, .page-head__title {
 .form__check input { width: 20px; height: 20px; accent-color: var(--blue); }
 .form__check a { color: var(--blue); text-decoration: underline; }
 .form__submit { justify-self: start; margin-top: var(--sp-3); }
+
+/* 送信できるフォームが用意できるまでの、メールでのご案内 */
+.mail-guide {
+  padding: var(--sp-7) clamp(24px, 4vw, 48px);
+  background: #fff; border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+}
+.mail-guide__list { display: grid; gap: var(--sp-4); }
+.mail-guide__list li {
+  position: relative; padding-left: var(--sp-6);
+  font-size: var(--fs-body); color: var(--ink);
+}
+.mail-guide__list li::before {
+  content: ""; position: absolute; left: 0; top: .72em;
+  width: 7px; height: 7px; border-radius: 50%; background: var(--blue);
+}
+.mail-guide__eg {
+  display: block; margin-top: 4px;
+  font-size: var(--fs-mini); color: var(--ink-3);
+}
+.mail-guide__btn { margin-top: var(--sp-7); }
+.mail-guide__note {
+  margin-top: var(--sp-4);
+  font-size: var(--fs-mini); color: var(--ink-3);
+}
 
 .after-send {
   margin-top: var(--sp-8); padding: var(--sp-7) var(--sp-6);
