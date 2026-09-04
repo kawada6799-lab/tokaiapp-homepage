@@ -63,6 +63,13 @@
     "desc": "東海Appからのお知らせ・導入事例・コラム。"
   },
   {
+    "slug": "news-douinavi",
+    "url": "/news/douinavi/",
+    "out": "news-douinavi.html",
+    "title": "検査説明システム「ドウイナビ」の提供を開始しました｜東海App",
+    "desc": "2026年9月6日より、クリニック向けの検査説明システム「ドウイナビ」の提供を開始しました。検査前の説明を動画で標準化し、理解と事前申告を設問で受け取ります。"
+  },
+  {
     "slug": "privacy",
     "url": "/privacy/",
     "out": "privacy.html",
