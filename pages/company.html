@@ -2,7 +2,7 @@
      company.html — 会社概要
      所在地は確認済みの実データ。それ以外の ★要確認 は埋めてください
      ========================================================================== -->
-<section class="page-head">
+<section class="page-head" style="--ph-head: var(--ph-head-company)">
   <div class="wrap">
     <nav class="breadcrumb" aria-label="現在位置">
       <a href="/">ホーム</a><span>›</span><span aria-current="page">会社概要</span>
@@ -15,12 +15,14 @@
 <!-- 代表メッセージ -->
 <!-- ★要確認: 本文は下書きです。代表ご本人の言葉に書き換えてください -->
 <section class="section">
-  <div class="wrap wrap--narrow">
+  <div class="wrap">
     <div class="sec-head">
       <p class="label">Message</p>
       <h2 class="sec-title">なぜ医療 × テクノロジーなのか</h2>
     </div>
-    <div class="entry">
+    <div class="ceo">
+      <div class="ph ceo__ph" data-reveal aria-hidden="true"></div>
+      <div class="entry">
       <p>
         クリニックの現場には、大がかりなシステムの前で止まっている業務がたくさんあります。
         提案されるのは大病院向けの構成ばかりで、規模に合わない。かといって、
@@ -31,7 +33,8 @@
         次に進むので、初期費用を抑えたまま現場に定着させられます。開発は自社で行い、
         名古屋から直接うかがいます。
       </p>
-      <p class="signature">東海App 代表　河田 祐希</p>
+      <p class="ceo__name">東海App 代表<b>河田　祐希</b></p>
+      </div>
     </div>
   </div>
 </section>

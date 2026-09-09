@@ -49,7 +49,8 @@ add_action('wp_enqueue_scripts', function () {
         null
     );
     wp_enqueue_style('tokaiapp-tokens', $uri . '/assets/css/tokens.css', array(), $ver('assets/css/tokens.css'));
-    wp_enqueue_style('tokaiapp-base',   $uri . '/assets/css/style.css',  array('tokaiapp-tokens'), $ver('assets/css/style.css'));
+    wp_enqueue_style('tokaiapp-photos', $uri . '/assets/css/photos.css', array('tokaiapp-tokens'), $ver('assets/css/photos.css'));
+    wp_enqueue_style('tokaiapp-base',   $uri . '/assets/css/style.css',  array('tokaiapp-photos'), $ver('assets/css/style.css'));
     wp_enqueue_style('tokaiapp-theme',  $uri . '/style.css',             array('tokaiapp-base'),   $ver('style.css'));
 
     wp_enqueue_script('tokaiapp-main', $uri . '/assets/js/main.js', array(), $ver('assets/js/main.js'), true);

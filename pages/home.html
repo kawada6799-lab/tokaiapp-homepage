@@ -9,11 +9,8 @@
 <!-- ===== 02 ファーストビュー ===== -->
 <!--
   画面いっぱいに出ます（高さ ＝ 画面の高さ）。
-
-  背景に写真を敷きたいときは、下の <section> に style を足すだけです。
-      <section class="hero has-photo" style="--hero-image: url('{{ASSETS}}/img/hero.jpg')">
-  写真の上に濃紺の膜がかかるので、白い文字はそのまま読めます。
-  膜の濃さは --hero-veil（0〜1、既定 0.82）で調整できます。
+  背景写真は assets/css/photos.css の --ph-hero を書き換えるだけで入ります
+  （このファイルは触らなくて大丈夫です）。
 -->
 <section class="hero">
   <div class="hero__media" aria-hidden="true"></div>
@@ -53,28 +50,57 @@
     </div>
 
     <ul class="issues">
+      <!-- 写真は assets/css/photos.css の --ph-issue-1〜3 で差し替えます -->
       <li class="issue" data-reveal>
-        <p class="issue__no">01</p>
-        <h3 class="issue__title">同じ検査説明を<br>一日に何度も繰り返す</h3>
-        <p class="issue__text">
-          説明の質が担当者によってばらつき、外来が押す原因にもなる。
-        </p>
+        <div class="ph issue__ph" style="--ph-src: var(--ph-issue-1)" aria-hidden="true">
+          <p class="issue__no">01</p>
+        </div>
+        <div class="issue__in">
+          <h3 class="issue__title">同じ検査説明を<br>一日に何度も繰り返す</h3>
+          <p class="issue__text">
+            説明の質が担当者によってばらつき、外来が押す原因にもなる。
+          </p>
+        </div>
       </li>
       <li class="issue" data-reveal data-reveal-delay="90">
-        <p class="issue__no">02</p>
-        <h3 class="issue__title">予約・問診の電話対応で<br>受付が手一杯</h3>
-        <p class="issue__text">
-          本来の業務に時間を割けず、患者さんの待ち時間も伸びていく。
-        </p>
+        <div class="ph issue__ph" style="--ph-src: var(--ph-issue-2)" aria-hidden="true">
+          <p class="issue__no">02</p>
+        </div>
+        <div class="issue__in">
+          <h3 class="issue__title">予約・問診の電話対応で<br>受付が手一杯</h3>
+          <p class="issue__text">
+            本来の業務に時間を割けず、患者さんの待ち時間も伸びていく。
+          </p>
+        </div>
       </li>
       <li class="issue" data-reveal data-reveal-delay="180">
-        <p class="issue__no">03</p>
-        <h3 class="issue__title">DXを勧められるが<br>何から手を付けるか不明</h3>
-        <p class="issue__text">
-          大規模な提案ばかりで、クリニックの規模に合う選択肢がない。
-        </p>
+        <div class="ph issue__ph" style="--ph-src: var(--ph-issue-3)" aria-hidden="true">
+          <p class="issue__no">03</p>
+        </div>
+        <div class="issue__in">
+          <h3 class="issue__title">DXを勧められるが<br>何から手を付けるか不明</h3>
+          <p class="issue__text">
+            大規模な提案ばかりで、クリニックの規模に合う選択肢がない。
+          </p>
+        </div>
       </li>
     </ul>
+  </div>
+</section>
+
+<!-- ===== 03b ステートメント帯（画面いっぱいの写真） =====
+     写真は assets/css/photos.css の --ph-statement で差し替えます -->
+<section class="statement">
+  <div class="statement__media" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="statement__body" data-reveal>
+      <p class="label label--on-dark">Our Approach</p>
+      <h2 class="statement__title">
+        全部を入れ替える必要はありません。<br>
+        いちばん重い一つから、変えていきます。
+      </h2>
+      <p class="statement__text">現場が回らなくなる導入に意味はありません。今の業務のどこに時間が取られているかを一緒に見て、効果の大きいところから順に着手します。</p>
+    </div>
   </div>
 </section>
 
@@ -91,39 +117,48 @@
     <div class="services">
 
       <article class="svc svc--app" data-reveal>
-        <p class="svc__en">Clinic App</p>
-        <h3 class="svc__title">クリニック専用アプリ</h3>
-        <p class="svc__text">
-          予約・お知らせ・問診・患者さんとの連絡をひとつのアプリに。
-          ローコード開発で短期間・低コストに導入できます。
-        </p>
-        <a class="svc__more" href="/service/clinic-app/">
-          詳しく見る <span aria-hidden="true">→</span>
-        </a>
+        <div class="ph svc__ph" style="--ph-src: var(--ph-svc-app)" aria-hidden="true"></div>
+        <div class="svc__in">
+          <p class="svc__en">Clinic App</p>
+          <h3 class="svc__title">クリニック専用アプリ</h3>
+          <p class="svc__text">
+            予約・お知らせ・問診・患者さんとの連絡をひとつのアプリに。
+            ローコード開発で短期間・低コストに導入できます。
+          </p>
+          <a class="svc__more" href="/service/clinic-app/">
+            詳しく見る <span aria-hidden="true">→</span>
+          </a>
+        </div>
       </article>
 
       <article class="svc svc--dx" data-reveal data-reveal-delay="90">
-        <p class="svc__en">Medical DX</p>
-        <h3 class="svc__title">医療DX導入支援</h3>
-        <p class="svc__text">
-          負担の大きい業務から段階的にデジタル化。クラウド活用とIT機器の
-          選定・導入までまとめて引き受けます。
-        </p>
-        <a class="svc__more" href="/service/medical-dx/">
-          詳しく見る <span aria-hidden="true">→</span>
-        </a>
+        <div class="ph svc__ph" style="--ph-src: var(--ph-svc-dx)" aria-hidden="true"></div>
+        <div class="svc__in">
+          <p class="svc__en">Medical DX</p>
+          <h3 class="svc__title">医療DX導入支援</h3>
+          <p class="svc__text">
+            負担の大きい業務から段階的にデジタル化。クラウド活用とIT機器の
+            選定・導入までまとめて引き受けます。
+          </p>
+          <a class="svc__more" href="/service/medical-dx/">
+            詳しく見る <span aria-hidden="true">→</span>
+          </a>
+        </div>
       </article>
 
       <article class="svc svc--douinavi" data-reveal data-reveal-delay="180">
-        <p class="svc__en">Douinavi</p>
-        <h3 class="svc__title">ドウイナビ（検査説明DX）</h3>
-        <p class="svc__text">
-          動画で説明し、理解度を確認し、注意事項の申告まで受け取る。
-          検査説明を「伝える」から「伝わる」へ変えます。
-        </p>
-        <a class="svc__more" href="/service/douinavi/">
-          詳しく見る <span aria-hidden="true">→</span>
-        </a>
+        <div class="ph svc__ph" style="--ph-src: var(--ph-svc-douinavi)" aria-hidden="true"></div>
+        <div class="svc__in">
+          <p class="svc__en">Douinavi</p>
+          <h3 class="svc__title">ドウイナビ（検査説明DX）</h3>
+          <p class="svc__text">
+            動画で説明し、理解度を確認し、注意事項の申告まで受け取る。
+            検査説明を「伝える」から「伝わる」へ変えます。
+          </p>
+          <a class="svc__more" href="/service/douinavi/">
+            詳しく見る <span aria-hidden="true">→</span>
+          </a>
+        </div>
       </article>
 
     </div>
@@ -234,7 +269,7 @@
       <li class="step" data-reveal>
         <p class="step__no">Step 01</p>
         <h3 class="step__title">お問い合わせ</h3>
-        <p class="step__text">フォームまたはお電話から。相談は無料です。</p>
+        <p class="step__text">メールでご連絡ください。相談は無料です。</p>
       </li>
       <li class="step" data-reveal data-reveal-delay="70">
         <p class="step__no">Step 02</p>
