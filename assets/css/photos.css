@@ -41,7 +41,7 @@
      トップの中ほどで画面いっぱいに出る帯です。
      クリニックの受付・診察室・打ち合わせなど、横長の写真を。 */
   --ph-statement:  url("../img/photos/statement.jpg");
-  --pos-statement: center 25%;   /* 顔が切れないよう少し上を見せる */
+  --pos-statement: 70% 30%;   /* 人物を右に寄せ、文字と顔が重ならないようにする */
 
 
   /* --- ③ 課題提起の3枚（こんな負担、毎日続いていませんか） --------------
@@ -73,12 +73,12 @@
 
   /* --- ⑦ 各ページ上部の見出し帯の背景 ------------------------------------
      入れなくても成立します。入れると回遊中も単調になりません。 */
-  --ph-head-service:      none;
-  --ph-head-douinavi:     none;
-  --ph-head-clinic-app:   none;
-  --ph-head-medical-dx:   none;
+  --ph-head-service:      url("../img/photos/head-service.jpg");
+  --ph-head-douinavi:     url("../img/photos/head-douinavi.jpg");
+  --ph-head-clinic-app:   url("../img/photos/head-clinic-app.jpg");
+  --ph-head-medical-dx:   url("../img/photos/head-medical-dx.jpg");
   --ph-head-price:        none;
-  --ph-head-company:      none;
+  --ph-head-company:      url("../img/photos/head-company.jpg");
   --ph-head-contact:      none;
   --ph-head-news:         none;
 }
