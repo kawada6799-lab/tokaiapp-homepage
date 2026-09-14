@@ -22,6 +22,12 @@ define('TOKAIAPP_VERSION', '1.0.0');
    国コードのヘッダが届かない環境では何もしません（締め出し防止）。 */
 require_once get_template_directory() . '/inc/geo-guard.php';
 
+/* 0-2. 管理画面の設定値（GA4・OGP画像・フォーム）と、<head> に出すSEO情報 ----
+   詳しくは inc/settings.php ・ inc/seo.php の冒頭と
+   docs/WEB集客_受け皿の設定.md を参照。 */
+require_once get_template_directory() . '/inc/settings.php';
+require_once get_template_directory() . '/inc/seo.php';
+
 /* 1. テーマの宣言 ------------------------------------------------------- */
 add_action('after_setup_theme', function () {
     add_theme_support('title-tag');
@@ -87,7 +93,38 @@ function tokaiapp_html($rel) {
     // 画像などの参照は {{ASSETS}}/img/xxx.png と書いてある。
     // 下層ページ（/service/douinavi/ など）で相対パスがずれないよう、
     // ここでテーマのURLに置き換える。
-    return str_replace('{{ASSETS}}', get_template_directory_uri() . '/assets', $html);
+    $html = str_replace('{{ASSETS}}', get_template_directory_uri() . '/assets', $html);
+
+    // お問い合わせフォーム: <!-- {{FORM:START}} --> 〜 <!-- {{FORM:END}} --> で
+    // 囲んだ「メールでのご案内」を、Contact Form 7 のフォームに差し替える
+    return tokaiapp_replace_contact_form($html);
+}
+
+/**
+ * お問い合わせフォームの差し替え。
+ *
+ * pages/contact.html には、送信できるフォームが無いときのための
+ * 「メールでのご案内」が <!-- {{FORM:START}} --> 〜 <!-- {{FORM:END}} --> で
+ * 囲んで置いてある。次の2つが揃ったときだけ、その部分をフォームに置き換える。
+ *
+ *   1. Contact Form 7 が有効になっている
+ *   2. 外観 → カスタマイズ → 東海App 設定 に、ショートコードが入っている
+ *
+ * どちらか欠けていれば、メールでのご案内のまま（何も壊れない）。
+ * 手順は docs/お問い合わせフォームの設置.md
+ */
+function tokaiapp_replace_contact_form($html) {
+    $start = '<!-- {{FORM:START}} -->';
+    $end   = '<!-- {{FORM:END}} -->';
+    $from  = strpos($html, $start);
+    $to    = strpos($html, $end);
+    if ($from === false || $to === false || $to < $from) { return $html; }
+
+    $shortcode = tokaiapp_setting('contact_form');
+    if ($shortcode === '' || !shortcode_exists('contact-form-7')) { return $html; }
+
+    $form = do_shortcode($shortcode);
+    return substr($html, 0, $from) . $form . substr($html, $to + strlen($end));
 }
 
 /**
