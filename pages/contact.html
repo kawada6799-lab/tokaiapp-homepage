@@ -44,13 +44,16 @@
     </div>
 
     <!--
-      ★ここに入力フォームを置く場合★
+      ★フォームについて★
 
       いまは送信できるフォームがないため、メールでのご案内にしています。
-      Contact Form 7 を入れたら、この <div class="mail-guide"> を
-      ショートコードに置き換えてください。
-      手順は docs/お問い合わせフォームの設置.md にあります。
+      下の {{FORM:START}} 〜 {{FORM:END}} の間は、WordPress 側で
+      Contact Form 7 のフォームに自動で差し替わります（functions.php）。
+      差し替えの条件は、Contact Form 7 が有効で、
+      外観 → カスタマイズ → 東海App 設定 にショートコードが入っていること。
+      このHTMLは書き換えなくてよい。手順は docs/お問い合わせフォームの設置.md
     -->
+    <!-- {{FORM:START}} -->
     <div class="mail-guide">
       <ul class="mail-guide__list">
         <li>医院名</li>
@@ -74,6 +77,7 @@
         うまく開かない場合は、上のアドレス宛にお送りください。
       </p>
     </div>
+    <!-- {{FORM:END}} -->
 
     <div class="after-send" id="download">
       <h3 class="after-send__title">ご連絡の流れ</h3>

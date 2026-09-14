@@ -7,8 +7,9 @@
  * やること:
  *   1. build/tokaiapp/ を作り直す
  *   2. wordpress/tokaiapp/ の PHP と style.css をコピー
- *   3. parts/ ・ pages/ ・ assets/ を同じ場所にコピー
- *      （テーマはこの3つを読んでページを組み立てる）
+ *   3. parts/ ・ pages/ ・ assets/ ・ pages.json を同じ場所にコピー
+ *      （テーマはこの3つを読んでページを組み立て、
+ *        pages.json から各ページのタイトル・説明文を出す）
  *   4. zip があれば build/tokaiapp.zip も作る
  *
  * できた zip を WordPress の「外観 → テーマ → 新規追加 → テーマのアップロード」
@@ -31,6 +32,7 @@ const SOURCES = {
   parts:  path.join(root, 'parts'),
   pages:  path.join(root, 'pages'),
   assets: path.join(root, 'assets'),
+  meta:   path.join(root, 'pages.json'),
 };
 const outDir = path.join(root, 'build');
 const themeOut = path.join(outDir, THEME);
@@ -58,6 +60,7 @@ await cp(SOURCES.theme, themeOut, { recursive: true });
 await cp(SOURCES.parts,  path.join(themeOut, 'parts'),  { recursive: true });
 await cp(SOURCES.pages,  path.join(themeOut, 'pages'),  { recursive: true });
 await cp(SOURCES.assets, path.join(themeOut, 'assets'), { recursive: true });
+await cp(SOURCES.meta,   path.join(themeOut, 'pages.json'));
 
 console.log(`テーマを組み立てました: build/${THEME}/  (${await totalSize(themeOut)})`);
 
