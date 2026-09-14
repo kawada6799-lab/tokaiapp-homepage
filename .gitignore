@@ -7,3 +7,7 @@ build/
 # OS が勝手に作るもの
 .DS_Store
 Thumbs.db
+
+# 写真素材（写真AC等は再配布不可なので、公開リポジトリには入れない。
+# テーマzipには pack-theme.mjs が同梱する）
+assets/img/photos/

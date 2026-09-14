@@ -12,6 +12,9 @@
          ↓
        --ph-hero: url("https://tokaiapp.com/wp-content/uploads/2026/09/hero.jpg");
 
+   テーマに同梱した写真は url("../img/photos/ファイル名.jpg") と書きます
+   （assets/img/photos/ に置いたもの。いまはこの方式で入っています）。
+
    写真を外したいときは none に戻すだけです。
    none のままでも崩れません（ブランド色のグラデーションが代わりに出ます）。
 
@@ -28,7 +31,7 @@
   /* --- ① ファーストビュー（トップの一番上・画面いっぱい） ---------------
      横長で、人が写っていて、中央〜左に余白がある写真が向いています。
      上から濃紺の膜がかかるので、多少明るい写真でも白文字は読めます。 */
-  --ph-hero:      none;
+  --ph-hero:      url("../img/photos/hero.jpg");
   --pos-hero:     center;
   /* 膜の濃さ。0〜1。写真が明るすぎて文字が読みにくいときだけ上げる */
   --hero-veil:    .78;
@@ -37,26 +40,26 @@
   /* --- ② ステートメント帯（「小さく始める」の全面写真） -----------------
      トップの中ほどで画面いっぱいに出る帯です。
      クリニックの受付・診察室・打ち合わせなど、横長の写真を。 */
-  --ph-statement:  none;
-  --pos-statement: center;
+  --ph-statement:  url("../img/photos/statement.jpg");
+  --pos-statement: center 25%;   /* 顔が切れないよう少し上を見せる */
 
 
   /* --- ③ 課題提起の3枚（こんな負担、毎日続いていませんか） --------------
      01 何度も検査説明をしている場面 / 02 受付が電話対応に追われる場面 /
      03 何から手を付けるか迷っている場面。横長（4:3〜16:9）で。 */
-  --ph-issue-1: none;
-  --ph-issue-2: none;
-  --ph-issue-3: none;
+  --ph-issue-1: url("../img/photos/issue-1.jpg");
+  --ph-issue-2: url("../img/photos/issue-2.jpg");
+  --ph-issue-3: url("../img/photos/issue-3.jpg");
 
 
   /* --- ④ 3つのサービスカード -------------------------------------------- */
-  --ph-svc-app:      none;   /* クリニック専用アプリ（スマホを使う場面） */
-  --ph-svc-dx:       none;   /* 医療DX導入支援（PC・受付まわり） */
-  --ph-svc-douinavi: none;   /* ドウイナビ（説明を受ける患者さん） */
+  --ph-svc-app:      url("../img/photos/svc-app.jpg");   /* クリニック専用アプリ（スマホを使う場面） */
+  --ph-svc-dx:       url("../img/photos/svc-dx.jpg");   /* 医療DX導入支援（PC・受付まわり） */
+  --ph-svc-douinavi: url("../img/photos/svc-douinavi.jpg");   /* ドウイナビ（説明を受ける患者さん） */
 
 
   /* --- ⑤ お問い合わせ帯（全ページ共通の紺色の帯） ------------------------ */
-  --ph-cta:  none;
+  --ph-cta:  none;   /* CGのロビー画像は「AC」の看板が写り込むので不採用 */
   --pos-cta: center;
 
 
