@@ -34,7 +34,7 @@
 | サービス | `service` | なし | `pages/service.html` |
 | ドウイナビ | `douinavi` | サービス | `pages/service-douinavi.html` |
 | クリニック専用アプリ | `clinic-app` | サービス | `pages/service-clinic-app.html` |
-| 医療DX導入支援 | `medical-dx` | サービス | `pages/service-medical-dx.html` |
+| プライマリーIT（旧 医療DX導入支援） | `medical-dx` | サービス | `pages/service-medical-dx.html` |
 
 > 親子にすると URL が `/service/douinavi/` になり、
 > テーマは自動で `pages/service-douinavi.html` を探します。

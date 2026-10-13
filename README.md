@@ -10,7 +10,7 @@ tokaiapp-homepage/
 │   ├── service.html             サービス一覧
 │   ├── service-douinavi.html    サービス詳細：ドウイナビ
 │   ├── service-clinic-app.html  サービス詳細：クリニック専用アプリ
-│   ├── service-medical-dx.html  サービス詳細：医療DX導入支援
+│   ├── service-medical-dx.html  サービス詳細：プライマリーIT（URLは medical-dx のまま）
 │   ├── price.html               料金
 │   ├── company.html             会社概要
 │   ├── contact.html             お問い合わせ
